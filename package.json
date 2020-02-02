@@ -2,8 +2,9 @@
   "name": "node-server",
   "version": "0.0.0",
   "private": true,
+  "main": "app.js",
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "nodemon app"
   },
   "dependencies": {
     "connect-flash": "^0.1.1",

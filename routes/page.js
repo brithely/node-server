@@ -9,3 +9,5 @@ router.get('/profile', (req, res) => {
 router.get('/join', (req, res) => {
     res.render()
 });
+
+module.exports = router;

@@ -1,4 +1,4 @@
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize, DataTypes) => (
     sequelize.define('todo', {
         text: {
             type: DataTypes.STRING(200),
@@ -8,4 +8,4 @@ module.exports = (sequelize, DataTypes) => {
         timpstamps: true,
         paranoid: true,
     })
-}
+);
