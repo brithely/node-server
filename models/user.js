@@ -5,11 +5,12 @@ const User = function (user) {
     this.email = user.email;
     this.name = user.name;
     this.password = user.password;
+    this.created_at = Date.now();
 };
 
 User.create = (newUser, result) => {
     console.log(newUser);
-    sql.query("INSERT INTO User SET ?", newUser, (err, res) => {
+    sql.query("INSERT INTO user SET ?", newUser, (err, res) => {
         if (err) {
             console.log("error: ", err);
             result(err, null);
@@ -21,8 +22,8 @@ User.create = (newUser, result) => {
     });
 };
 
-User.findById = (userId, result) => {
-    sql.query(`SELECT * FROM User WHERE id = ${userId}`, (err, res) => {
+User.findbyLogin = (email, password, result) => {
+    sql.query(`SELECT * FROM user WHERE email = '${email}' and password = ${password}`, (err, res) => {
         if (err) {
             console.log("error: ", err);
             result(err, null);
@@ -35,13 +36,12 @@ User.findById = (userId, result) => {
             return;
         }
 
-        // not found Customer with the id
-        result({ kind: "not_found" }, null);
+        result({ message: "Incorrect email/password" }, null);
     });
 };
 
 User.getAll = result => {
-    sql.query("SELECT * FROM User", (err, res) => {
+    sql.query("SELECT * FROM user", (err, res) => {
         if (err) {
             console.log("error: ", err);
             result(null, err);
@@ -55,8 +55,8 @@ User.getAll = result => {
 
 User.updateById = (id, user, result) => {
     sql.query(
-        "UPDATE User SET email = ?, name = ?, active = ? WHERE id = ?",
-        [user.email, user.name, user.active, id],
+        "UPDATE user SET email = ?, name = ?, password = ? WHERE id = ?",
+        [user.email, user.name, user.password, id],
         (err, res) => {
             if (err) {
                 console.log("error: ", err);
@@ -77,7 +77,7 @@ User.updateById = (id, user, result) => {
 };
 
 User.remove = (id, result) => {
-    sql.query("DELETE FROM User WHERE id = ?", id, (err, res) => {
+    sql.query("DELETE FROM user WHERE id = ?", id, (err, res) => {
         if (err) {
             console.log("error: ", err);
             result(null, err);
@@ -96,7 +96,7 @@ User.remove = (id, result) => {
 };
 
 User.removeAll = result => {
-    sql.query("DELETE FROM User", (err, res) => {
+    sql.query("DELETE FROM user", (err, res) => {
         if (err) {
             console.log("error: ", err);
             result(null, err);

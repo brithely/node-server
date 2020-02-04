@@ -32,8 +32,24 @@ router.post("/users/signup", (req, res) => {
 // // Retrieve all Customers
 // router.get("/users", User.findAll);
 
-// // Retrieve a single Customer with customerId
-// router.get("/users/:customerId", User.findOne);
+// Retrieve a single Customer with customerId
+router.get("/users/login", (req, res) => {
+    if (!req.body) {
+        res.status(400).send({
+            message: "Content can not be empty!"
+        });
+    }
+
+    User.findbyLogin(req.body.email, req.body.password, (err, data) => {
+        if (err) {
+            console.log(err);
+            res.status(404).send({
+                message: err.message
+            });
+        }
+        else res.send(data);
+    })
+});
 
 // // Update a Customer with customerId
 // router.put("/customers/:customerId", User.update);
