@@ -1,0 +1,24 @@
+/*
+css
+*/
+* {
+  margin : 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 150vh;
+  background-color: #ced6e0;
+  margin: 0 auto;
+}
+.Todo_Layout {
+  display: flex;
+  justify-content: center;
+  min-height: 150vh;
+}
+.Todo_Container {
+  width: 150vw;
+  max-width: 800px;
+  background-color: #ffffff;
+  text-align: center;
+}
