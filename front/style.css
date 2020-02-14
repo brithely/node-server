@@ -101,11 +101,29 @@ body {
 }
 .Todo_Container main .item {
   border-bottom: 1px solid #576574;
-  padding: 0.4rem;
+  padding: 0.3rem;
+  margin-bottom: 0.6rem;
 }
 .Todo_Container main .Todo_Input .btn {
   /* padding: 5px; */
   margin-left: 10px;
   font-size: 0.9rem;
+  cursor: pointer;
+}
+.Todo_Container footer .Todo_Footer {
+  display: flex;
+  justify-content: flex-end;
+  margin: 30px 180px 0 0;
+}
+.Todo_Container footer .Todo_Footer span {
+  display: inline-block;
+  width: 70px;
+  height: 40px;
+  background-color: #487eb0;
+  border: none;
+  border-radius: 8px;
+  line-height: 40px;
+  font-size: 0.75rem;
+  color: #f5f6fa;
   cursor: pointer;
 }
