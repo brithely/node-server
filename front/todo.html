@@ -6,43 +6,67 @@
 -->
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TODOLIST_Ver.0.1</title>
-  <link rel="icon" type="image/png" sizes="16x16" href="./image/favicon-16x16.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="Todo_Layout">
-    <div class="Todo_Container">
-      <header>
-        <div>
-          <h1>TODO LIST</h1>
-        </div>
-      </heraer>
-      <nav>
-        <div>
-          <input type="text">
-          <button>추가</button>
-        </div>
-      </nav>
-      <main>
-        <div>
-          <!--
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODOLIST_Ver.0.1</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./image/favicon-16x16.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="Todo_Layout">
+      <div class="Todo_Container">
+        <nav>
+          <div class="Left Elem">
+            <div>
+              <h1>TODO LIST</h1>
+            </div>
+          </div>
+          <div class="Center Elem">
+            <input type="text" placeholder="텍스트를 입력해주세요."/>
+            <!--span에 javascript로 click event-->
+            <span class="addBtn">추가</sapn>
+          </div>
+          <div class="Right Elem">
+            <div>회원가입</div>
+            <div>로그인</div>
+            <div>일정확인</div>
+            <div>일정완료</div>
+          </div>
+        </nav>
+
+        <main>
+          <div>
+            <!--
             리스트는 자바스크립트로 구현.
           -->
-          <p>todolist</p>
-        </div>
-      </main>
-      <footer>
-        <div>
-          footer
-        </div>
-      </footer>
+            <p>todolist</p>
+          </div>
+        </main>
+        <footer>
+          <div>
+            footer
+          </div>
+        </footer>
+      </div>
     </div>
-  </div>
-  <script src="index.js"></script>
-</body>
+    <script src="index.js"></script>
+  </body>
 </html>
