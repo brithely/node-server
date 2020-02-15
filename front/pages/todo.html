@@ -14,7 +14,7 @@
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="./image/favicon-16x16.png"
+      href="../image/favicon-16x16.png"
     />
     <link
       rel="stylesheet"
@@ -28,7 +28,7 @@
       href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
     <div class="Todo_Layout">
@@ -36,7 +36,9 @@
         <nav>
           <div class="Left Elem">
             <div class="header">
-              <h1>TODO LIST</h1>
+              <h1 onclick="index()">
+                TODO MAIN
+              </h1>
             </div>
           </div>
           <div class="Center Elem">
@@ -45,10 +47,10 @@
             <span class="addBtn">추가</sapn>
           </div>
           <div class="Right Elem">
-            <div>회원가입</div>
-            <div>로그인</div>
-            <div>일정확인</div>
-            <div>일정완료</div>
+            <div class="join_page" onclick="joinOpen()">회원가입</div>
+            <div class="login_page" onclick="loginOpen()">로그인</div>
+            <div class="check_page" onclick="checkOpen()">일정확인</div>
+            <div class="complete_page" onclick="completeOpen()">일정완료</div>
           </div>
         </nav>
         <main>
@@ -183,6 +185,23 @@
         </footer>
       </div>
     </div>
-    <script src="index.js"></script>
+    <script>
+      function index() {
+      window.open('../index.html','ot');
+      }
+      function joinOpen() {
+        window.open('join.html','ot');
+      }
+      function loginOpen() {
+        window.open('login.html','ot');
+      }
+      function checkOpen() {
+        window.open('todoCheck.html','ot');
+      }
+      function completeOpen() {
+        window.open('todoComplete.html','ot');
+      }
+    </script>
+    <script src="../index.js"></script>
   </body>
 </html>
