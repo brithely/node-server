@@ -60,11 +60,11 @@
           <!-- ==================================  -->
           <div class="Todo_Input list">
             <div class="Todo_Input item">
-              <input type="text" value="addBtn에서 넘어온 값" />
+              <input type="text" id="text" name="text" value="addBtn에서 넘어온 값" />
               <!--span에 javascript로 click event-->
-              <span class="btn edit">수정</sapn>
-              <span class="btn complete">완료</span>
-              <span class="btn remove">삭제</span>
+              <span class="btn edit" id="editBtn" name="editBtn">수정</sapn>
+              <span class="btn complete" id="saveBtn" name="saveBtn">완료</span>
+              <span class="btn remove" id="removeBtn" name="removeBtn">삭제</span>
             </div>
             <div class="Todo_Input item">
               <input type="text" value="addBtn에서 넘어온 값" />
@@ -180,7 +180,7 @@
         </main>
         <footer>
           <div class="Todo_Footer box">
-            <span class="btn allClear">모두삭제</span>
+            <span class="btn allClear" id="allDelBtn" name="allDelBtn">모두삭제</span>
           </div>
         </footer>
       </div>
