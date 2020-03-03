@@ -21,9 +21,9 @@ exports.getTodo = async (req, res, next) => {
     }
 }
 
-exports.getTodos = async (req, res, next) => {
+exports.getAllTodo = async (req, res, next) => {
     try {
-        let rows = await TodoService.getTodos();
+        let rows = await TodoService.getAllTodo();
         return res.json(rows);
     } catch (err) {
         return res.status(500).json(err)
