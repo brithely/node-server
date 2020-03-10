@@ -20,12 +20,14 @@ passportConfig();
 
 const frontRouter = require('./src/routes/front-route');
 const todoRouter = require('./src/routes/todo-route');
+const authRouter = require('./src/routes/auth-route');
 const userRouter = require('./src/routes/user-route');
 
 // app.use("/api/", userRouter);
 app.use("/", frontRouter);
-app.use("/api/user", userRouter);
-app.use("/api/todo", todoRouter);
+app.use("/api/auth", authRouter);
+app.use("/api/todo", passport.authenticate('jwt', {session: false}), todoRouter);
+app.use("/api/user", passport.authenticate('jwt', {session: false}), userRouter);
 
 app.listen(3000, () => {
 });

@@ -12,9 +12,9 @@ exports.insertTodo = async (text) => {
 
 };
 
-exports.getAllTodo = async () => {
+exports.getAllTodo = async (user) => {
     try {
-        let data = await pool.query(TodoQuery.getAllTodo);
+        let data = await pool.query(TodoQuery.getAllTodoFromUser, user[0].email);
         return data[0];
     } catch (err) {
         console.log(err);
